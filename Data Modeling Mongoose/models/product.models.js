@@ -1,10 +1,5 @@
 import mongoose from "mongoose";
 const productSchema=new mongoose.Schema({
-    id:{
-        type:String,
-        required:true,
-        unique:true,
-    },
     name:{
         type:String,
         required:true,
@@ -24,6 +19,15 @@ const productSchema=new mongoose.Schema({
         type:Number,
         required:true,
     },
+    category:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Category',
+        required:true,
+    },
+    owner:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'User',
+    }
 },{
     timestamps: true,
 })
