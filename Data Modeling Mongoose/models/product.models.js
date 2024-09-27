@@ -13,6 +13,17 @@ const productSchema=new mongoose.Schema({
         type:String,
         required:true,
     },
+    productImage:{
+        type:String,
+    },
+    price:{
+        type:Number,
+        required:true,
+    },
+    countInStock:{
+        type:Number,
+        required:true,
+    },
 },{
     timestamps: true,
 })
