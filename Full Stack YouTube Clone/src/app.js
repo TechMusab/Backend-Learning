@@ -14,6 +14,7 @@ app.use(express.urlencoded({
     limit:'16kb'
 }))
 app.use(express.static("public"))
+app.use(cookieParser());
 //async method jab bhi complete hota h wo apko aik promise bhi return krta h
 
 
