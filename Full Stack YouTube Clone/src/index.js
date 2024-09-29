@@ -3,7 +3,13 @@ import connectdb from "./db/db.js";
 dotenv.config({
     path:"./env"
 })
-connectdb();
+connectdb().then(()=>{
+app.listen(process.env.PORT || 8000,()=>{
+    console.log(`server is running on port ${process.env.PORT}`)
+})
+}).catch(err=>{
+    console.log(err)
+});
 
 //Second Approach
 // import express from "express";
