@@ -49,4 +49,16 @@ next();
 userSchema.methods.isPassowordcorrect=async function(){
     return await bcrypt.compare(password,this.password);
 }
+userSchema.methods.generateToken=function(){
+    
+    jwt.sign({
+        _id:this.id,
+        username:this.username,
+        email:this.email,
+        
+    })
+}
+userSchema.methods.generateRefrestToken=function(){
+    return jwt.sign({id:this._id},process.env.JWT_SECRET,{expiresIn:"7d"});
+}
 export const User=mongoose.model("User",userSchema);
