@@ -16,6 +16,4 @@ app.use(express.urlencoded({
 app.use(express.static("public"))
 app.use(cookieParser());
 //async method jab bhi complete hota h wo apko aik promise bhi return krta h
-
-
 export {app}
