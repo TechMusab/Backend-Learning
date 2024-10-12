@@ -1,4 +1,4 @@
-//wrapper laga raha hun jo bhi ftn pass hoga ospe try catch ka or async ka
+//wrapper laga raha hun jo bhi ftn pass hoga ospe try catch ka or async 
 // const asyncHandler=(fn)=>{async (res,req,next)=>{
 //     try {
 //         await fn(res,req,next);
