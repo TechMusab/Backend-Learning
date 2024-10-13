@@ -44,6 +44,7 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/submit" && req.method === "POST") {
     fs.writeFileSync("user.txt", "Musab Joiya");
     res.statusCode=302
+    res.setHeader('Location','/');
   }
 });
 
