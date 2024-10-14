@@ -1,7 +1,6 @@
 const http=require("http")
 http.createServer((req,res)=>{
 if(req.url==='/'){
-    //create navbar
     res.write('<a href="/home">Home</a> | <a href="/about">About</a> | <a href="/contact">Contact</a> | <a href="/services">Services</a> | <a href="/portfolio">Portfolio</a>')
     res.end();
 }
