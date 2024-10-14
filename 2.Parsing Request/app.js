@@ -1,7 +1,5 @@
-const http = require("http");
 const fs = require("fs");
-const PORT = 3000;
-const server = http.createServer((req, res) => {
+const requestHandler = ((req, res) => {
   if (req.url === "/") {
     res.setHeader("Content-Type", "text/html");
     res.write(`
@@ -42,6 +40,4 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
-});
+module.exports = requestHandler;
