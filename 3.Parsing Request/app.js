@@ -23,7 +23,6 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/submit" && req.method === "POST") {
     const body = [];
     req.on("data", (chunk) => {
-      console.log(chunk);
       body.push(chunk);
     });
     req.on("end", () => {
@@ -35,9 +34,9 @@ const server = http.createServer((req, res) => {
       // }
       //2nd method
       const bodyfinal = Object.fromEntries(params);
-      console.log(bodyfinal);
+      fs.writeFileSync("user.txt", JSON.stringify(bodyfinal));
     });
-    fs.writeFileSync("user.txt", "Musab Joiya");
+ 
     res.statusCode = 302;
     res.setHeader("Location", "/");
   }
