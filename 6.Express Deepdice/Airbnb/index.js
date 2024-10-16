@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import userRouter from './routes/userRouter.js';
 import adminRouter from './routes/adminRouter.js';
 const app=express();
@@ -11,7 +12,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(userRouter);
 app.use(adminRouter);
 app.use((req,res,next)=>{
-    res.status(404).send('<h1>Page not found 404</h1>');
+    res.status(404).sendFile(path.join(__dirname,'views/404.html'));
 })
 const PORT=3000;
 app.listen(PORT,()=>{

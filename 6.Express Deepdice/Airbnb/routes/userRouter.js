@@ -1,10 +1,7 @@
 import express from 'express';
+import path from 'path';
 const userRouter=express.Router()
 userRouter.get('/',(req,res)=>{
-    res.send(`
-    <h1>Welcome to AIRBNB</h1>
-    <p>Find the best places to stay, dine and relax</p>
-    <a href="/add-home"> Add Home</a>
-    `);
+    res.sendFile(path.join(__dirname,'../views/home.html'));
 });
 export default userRouter;
