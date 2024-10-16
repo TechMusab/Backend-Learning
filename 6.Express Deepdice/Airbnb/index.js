@@ -1,7 +1,7 @@
-import express from 'express';
-import path from 'path';
-import userRouter from './routes/userRouter.js';
-import adminRouter from './routes/adminRouter.js';
+const express = require('express');
+const path = require('path');
+const userRouter = require( './routes/userRouter.js');
+const adminRouter = require('./routes/adminRouter.js');
 const app=express();
 app.use((req, res, next) =>{
     console.log(req.url,req.method);
