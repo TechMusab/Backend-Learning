@@ -6,7 +6,10 @@ const adminRouter=express.Router();
 adminRouter.get('/add-home',(req,res)=>{
 res.sendFile(path.join(rootDir,'views/addhome.html'));
 });
+let registeredhomes=[];
 adminRouter.post('/add-home',(req,res)=>{
+registeredhomes.push({houseName:req.body.houseName})
 res.sendFile(path.join(rootDir,'views/success.html'));
 });
-module.exports=adminRouter;
+exports.adminRouter=adminRouter;
+exports.registeredhomes=registeredhomes;
