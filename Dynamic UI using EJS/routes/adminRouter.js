@@ -4,12 +4,12 @@ const rootDir = require('../utils/path.js');
 const adminRouter=express.Router();
 
 adminRouter.get('/add-home',(req,res)=>{
-res.sendFile(path.join(rootDir,'views/addhome.html'));
+res.render('addhome',{title: 'Add Home'});
 });
 let registeredhomes=[];
 adminRouter.post('/add-home',(req,res)=>{
 registeredhomes.push({houseName:req.body.houseName})
-res.sendFile(path.join(rootDir,'views/success.html'));
+res.render('success',{title: 'Home Added'});
 });
 exports.adminRouter=adminRouter;
 exports.registeredhomes=registeredhomes;
