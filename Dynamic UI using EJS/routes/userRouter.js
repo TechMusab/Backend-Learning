@@ -3,6 +3,6 @@ const path = require('path');
 const { registeredhomes } = require('./adminRouter.js');
 const userRouter=express.Router()
 userRouter.get('/',(req,res)=>{
-    res.render('home',{registeredhomes,title:'home'});
+    res.render('home',{registeredhomes,title:'home',curr:'home'});
 });
 module.exports = userRouter

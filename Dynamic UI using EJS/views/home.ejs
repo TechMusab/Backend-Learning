@@ -7,8 +7,11 @@
         Here are our registered Homes
         <ul class="list-disc ml-10 flex justify-center flex-col">
             <% registeredhomes.forEach((home)=>{%>
-                <li>
+                <li class="text-white">
                     <%= home.houseName%>
+                    <%= home.price%>
+                    <%= home.location%>
+                    <%= home.description%>
                 </li>
             <% }) %>
         </ul>

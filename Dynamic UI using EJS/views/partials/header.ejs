@@ -1,4 +1,4 @@
 <header class="flex justify-between p-5 bg-gray-50">
-    <a href="/add-home">Add home</a>
-    <a href="/">Go to Home</a>
+    <a class="<%= curr=='add-home' ? 'text-blue bg-orange-900' : '' %>" href="/add-home">Add home</a>
+    <a class="<%= curr=='home' ? 'text-blue bg-orange-500' : '' %>" href="/">Go to Home</a>
 </header>
